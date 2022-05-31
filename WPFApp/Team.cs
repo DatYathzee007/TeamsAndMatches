@@ -1,7 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-
-
-namespace WPFApp
+﻿namespace WPFApp
 {
     public class Team //: ObservableObject
     {

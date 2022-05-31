@@ -74,7 +74,7 @@ namespace WPFApp
         public IRelayCommand AddToMatchCommand { get; set; }
         public IRelayCommand RemoveFromMatchCommand { get; set; }
         public IRelayCommand SaveMatchCommand { get; set; }
-        
+
 
         public MainViewModel()
         {
@@ -84,7 +84,7 @@ namespace WPFApp
             ReadData("Teams.txt");
             AddOrEditTeamsCommand = new RelayCommand(AddOrEditTeams);
             AddToMatchCommand = new RelayCommand(AddToMatch, () => TeamsInMatch.Count < 2 && decider);
-            RemoveFromMatchCommand = new RelayCommand(RemoveFromMatch ,() => TeamsInMatch.Count > 0);
+            RemoveFromMatchCommand = new RelayCommand(RemoveFromMatch, () => TeamsInMatch.Count > 0);
             SaveMatchCommand = new RelayCommand(SaveMatch, () => TeamsInMatch.Count == 2);
         }
 

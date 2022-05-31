@@ -11,7 +11,7 @@ namespace WPFApp
         {
             InitializeComponent();
             DataContext = new TeamEditorViewModel(team);
-            
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
