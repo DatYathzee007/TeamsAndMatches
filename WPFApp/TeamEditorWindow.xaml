@@ -1,0 +1,38 @@
+﻿<Window x:Class="WPFApp.TeamEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApp" d:DataContext="{d:DesignInstance Type=local:TeamEditorViewModel}"
+        mc:Ignorable="d"
+        Title="TeamEditor" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="9*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Label Content="Edit Name"/>
+        <Label Content="Edit Strength" Grid.Column="1"/>
+        <TextBox Text="{Binding Team.Name}"
+                 Grid.Row="1"/>
+        <StackPanel Grid.Row="1"
+                Grid.Column="1">
+            <Slider Value="{Binding Team.Strength}" Minimum="1" Maximum="100"
+                TickFrequency="10"
+                TickPlacement="Both"
+                    Margin="4,4,4,0"/>
+            <TextBlock Text="{Binding Team.Strength}"
+                       Margin="0,8,0,0"/>
+        </StackPanel>
+        <Button Content="Save Editing."
+                Margin="8"
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Click="Button_Click"/>
+    </Grid>
+</Window>
